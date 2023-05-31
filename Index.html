@@ -31,9 +31,19 @@
         // $(document).ready(function () {
         //     $('h2').css('background-color', 'lightgreen');
         // })
-
+        //$(document).ready()的簡寫
         $(function () {
             $('h2').css('background-color', 'pink');
+            $('h2').on('mouseenter', function () {
+                //this 表示觸發事件的物件
+                //this 是JavaScript物件
+                //$(this) 就是轉型成jQuery物件
+                $(this).css('background-color', 'lightgreen');
+                //this.style.backgroundColor = "lightgreen";
+            })
+            $('h2').on('mouseleave', function () {
+                $(this).css('background-color', 'pink');
+            })
         })
 
     </script>
