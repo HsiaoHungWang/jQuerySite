@@ -1,0 +1,40 @@
+JavaScript > Browser  data > php > data > insert into DB... select * from tablename where name='Jack' and password ='1234'
+           > Node.js 
+
+http How are you? > How are you?
+https   How are you?  > lakjsdfljasdfljasdfljlasdfkljasfkljdaslf
+
+http > http client > browser
+http > http server > web server
+
+JavaScript、PHP、Python  => Interpreter
+
+Java、C#、C++ => Compiler
+
+LiveScript =>  ECMA  => ECAM Script Language => JavaScript、JScript
+
+HTML、CSS 、DOM=> W3C
+
+obj.addEventListener("click",function(event){
+   console.log(event);
+window.event
+})
+
+//事件
+使用者對網頁的操作行為 > 事件
+
+按下按鈕 > click
+mouseover、mouseenter
+
+//步驟一 找到要控制的對象(html tag)
+//步驟二 在甚麼情境下(使用者對網頁的操作行為)
+//步驟三 要做甚麼事(內容的改變、樣式的改變)
+
+<input type="text">
+<img src="a.gif">
+
+<a hreflang = "zh-tw">link</a>
+<a hreflang = "zh">link</a>
+$('a[hreflang|="zh"]')
+
+
