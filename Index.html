@@ -33,17 +33,40 @@
         // })
         //$(document).ready()的簡寫
         $(function () {
-            $('h2').css('background-color', 'pink');
-            $('h2').on('mouseenter', function () {
-                //this 表示觸發事件的物件
-                //this 是JavaScript物件
-                //$(this) 就是轉型成jQuery物件
-                $(this).css('background-color', 'lightgreen');
-                //this.style.backgroundColor = "lightgreen";
-            })
-            $('h2').on('mouseleave', function () {
-                $(this).css('background-color', 'pink');
-            })
+            //const myH2 = $('h2');
+            // $('h2').css('background-color', 'pink');
+            // $('h2').on('mouseenter', function () {
+            //     //this 表示觸發事件的物件
+            //     //this 是JavaScript物件
+            //     //$(this) 就是轉型成jQuery物件
+            //     $(this).css('background-color', 'lightgreen');
+            //     //this.style.backgroundColor = "lightgreen";
+            // })
+            // $('h2').on('mouseleave', function () {
+            //     $(this).css('background-color', 'pink');
+            // })
+
+
+
+
+            // $('h2').css('background-color', 'pink')
+            //     .css('padding', '10px')
+            //     .css('width', '500px')
+            //     .on('mouseenter', function () {
+            //         $(this).css('background-color', 'lightgreen');
+            //     }).on('mouseleave', function () {
+            //         $(this).css('background-color', 'pink');
+            //     })
+            //{key:value,key:value}
+            $('h2').css({ 'background-color': 'pink', 'padding': '10px', 'width': '500px' })
+                .on({
+                    'mouseenter': function () {
+                        $(this).css('background-color', 'lightgreen');
+                    },
+                    'mouseleave': function () {
+                        $(this).css('background-color', 'pink');
+                    }
+                })
         })
 
     </script>
