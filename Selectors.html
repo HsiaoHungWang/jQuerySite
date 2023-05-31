@@ -16,6 +16,24 @@
         /* a {
             text-decoration: none;
         } */
+        section {
+            height: 300px;
+        }
+
+        #s1 {
+
+            background-color: lightskyblue;
+        }
+
+        #s2 {
+
+            background-color: lightsalmon;
+        }
+
+        #s3 {
+
+            background-color: lightcoral;
+        }
     </style>
 </head>
 
@@ -52,8 +70,10 @@
                         <td>I</td>
                     </tr>
                 </table>
-                <input type="text"><span></span>
-
+                <input type="text" autofocus><span></span>
+                <section id="s1">Section1</section>
+                <section id="s2">Section2</section>
+                <section id="s3">Section3</section>
             </div>
             <div class="col-2"></div>
         </div>
@@ -92,6 +112,18 @@
             })
 
             $('input[type="text"]~span').text('請輸入')
+
+            //基本篩選選擇器
+            $(':header:not(h2)').css({
+                'background-color': 'silver',
+                'padding': '5px'
+            })
+            $(':focus').css({
+                'background-color': 'lightgreen'
+            })
+            $(':target').css({
+                'background-color': 'yellow'
+            })
         })
     </script>
 </body>
