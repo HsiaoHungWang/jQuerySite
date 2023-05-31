@@ -70,10 +70,20 @@
                         <td>I</td>
                     </tr>
                 </table>
+
                 <input type="text" autofocus><span></span>
-                <section id="s1">Section1</section>
+                <section id="s1">Section1
+                    <input type="button" value="button" disabled>
+                    <input type="checkbox" checked> <input type="checkbox">
+                    <div></div>
+                    <div>
+                        <p>div2</p>
+                    </div>
+                </section>
                 <section id="s2">Section2</section>
                 <section id="s3">Section3</section>
+
+
             </div>
             <div class="col-2"></div>
         </div>
@@ -124,6 +134,8 @@
             $(':target').css({
                 'background-color': 'yellow'
             })
+            $('#s1>div:empty').text("div1")
+            $('#s1>div:has("p")').css('background-color', 'green')
         })
     </script>
 </body>
