@@ -34,6 +34,25 @@
                         <a href="jQuery.pptx">講義下載(PPT)</a>
                     </li>
                 </ul>
+                <h3>階層選擇器</h3>
+                <table class="simpleTable">
+                    <tr>
+                        <td>A</td>
+                        <td>B</td>
+                        <td>C</td>
+                    </tr>
+                    <tr>
+                        <td>D</td>
+                        <td>E</td>
+                        <td>F</td>
+                    </tr>
+                    <tr>
+                        <td>G</td>
+                        <td>H</td>
+                        <td>I</td>
+                    </tr>
+                </table>
+                <input type="text"><span></span>
 
             </div>
             <div class="col-2"></div>
@@ -46,7 +65,7 @@
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script>
         $(function () {
-
+            //屬性選擇器
             $('a[href$=".pdf"]').css({
                 'text-decoration': 'none',
                 // 'background-color': 'yellow',
@@ -61,6 +80,18 @@
                 'background-size': '16px',
                 'padding-left': '20px'
             })
+
+            //階層選擇器
+            $('.simpleTable').css({
+                'width': '400px',
+                'border': '1px solid green'
+            })
+            // $('.simpleTable td')
+            $('.simpleTable>tbody>tr>td').css({
+                'border': '1px solid green'
+            })
+
+            $('input[type="text"]~span').text('請輸入')
         })
     </script>
 </body>
