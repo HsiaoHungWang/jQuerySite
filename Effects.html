@@ -90,14 +90,16 @@
 
             })
 
-            $('h1').on('click', function () {
-                $(this).addClass('animate__flipInX');
-            })
-            $('h1').on('animationend', function () {
-                $(this).removeClass('animate__flipInX');
+            $('h1').on({
+                'click': function () {
+                    $(this).addClass('animate__flipInX');
+                },
+                'animationend': function () {
+                    $(this).removeClass('animate__flipInX');
+                }
             })
 
-          
+
         })
     </script>
 </body>
