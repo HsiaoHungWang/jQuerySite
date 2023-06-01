@@ -19,6 +19,19 @@
             left: 1000px;
             top: 200px;
         }
+
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            transition: background-color 2s, border-radius 3s, transform 1s;
+        }
+
+        #box1.effect {
+            background-color: blue;
+            border-radius: 50%;
+            transform: translateX(800px);
+        }
     </style>
 </head>
 
@@ -33,6 +46,7 @@
                     <img src="images/transformer.jpg" />
                 </div>
                 <img src="images/alligator.gif" id="alligator" />
+                <div id="box1"></div>
             </div>
             <div class="col-2"></div>
         </div>
@@ -68,6 +82,10 @@
                 }, 3000, function () {
                     $(this).hide(1000);
                 });
+
+            })
+            $('#box1').on('click', function () {
+                $(this).addClass('effect');
 
             })
         })
