@@ -34,6 +34,16 @@
 
             background-color: lightcoral;
         }
+
+        #button2 {
+            /* visibility: hidden; */
+            display: none;
+        }
+
+        #button3 {
+            /* display: none; */
+            visibility: hidden;
+        }
     </style>
 </head>
 
@@ -111,7 +121,11 @@
                     </div>
                 </section>
                 <section id="s2">Section2</section>
-                <section id="s3">Section3</section>
+                <section id="s3">Section3
+                    <button id="button1" hidden>click1</button><span></span>
+                    <button id="button2">click2</button><span></span>
+                    <button id="button3">click3</button><span></span>
+                </section>
 
 
             </div>
@@ -183,6 +197,9 @@
             $('.simpleTable tr:nth-child(2n+1)').css({
                 'background-color': 'yellow'
             })
+
+            //visibility selectors
+            $('button:hidden+span').text('hidden')
         })
     </script>
 </body>
