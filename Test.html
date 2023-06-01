@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //短路運算
+        // console.log(true || false);  //true || 後面的程式就不執行
+        // console.log(true || true);
+        // console.log(false || false);  //false || 後面的程式才需要執行
+        // console.log(false || true);
+        // //設定預設值
+        // let name = null;
+        // name = "Tom";
+        // name = name || "guest";
+        // console.log(name); //guest
+
+        console.log(true && false);  //true && 後面的程式需要執行
+        console.log(true && true);   //true
+        console.log(false && false);  //false && 後面的程式不需要執行
+        console.log(false && true);   //false
+
+        //判斷物件存在，才去讀取裡面的值
+        const member = { "name": "Tom", "age": 30 };
+        //const member = null;
+        console.log(member && member.name)
+
+
+    </script>
+</body>
+
+</html>
