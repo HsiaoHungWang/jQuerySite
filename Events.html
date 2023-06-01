@@ -19,9 +19,13 @@
                 <button type="button" id="buttonOn" class="btn btn-primary">on</button>
                 <button type="button" id="buttonOne" class="btn btn-primary">one</button>
                 <button type="button" id="buttonOff" class="btn btn-primary">off</button>
-                <div id="div1"></div>
+                <div id=""></div>
+
             </div>
-            <div class="col-2"></div>
+            <div class="col-2">
+                <img id="img1">
+                <input type="file" id="file1">
+            </div>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -40,6 +44,15 @@
             $('#buttonOff').one('click', function () {
                 $('#buttonOn').off('click'); //取消buttonOn按鈕的click事件
                 $('#buttonOne').trigger('click');//按下buttonOff的按鈕去引發buttonOne的click事件
+            })
+            $('#file1').on('change', function () {
+                //預覽圖
+                const reader = new FileReader();
+                reader.addEventListener('load', event => {
+                    $('#img1').attr('src', event.target.result);
+                })
+                reader.readAsDataURL(this.files[0])
+
             })
         })
     </script>
