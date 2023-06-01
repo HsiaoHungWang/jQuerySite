@@ -37,4 +37,23 @@ mouseover、mouseenter
 <a hreflang = "zh">link</a>
 $('a[hreflang|="zh"]')
 
+引用jQuery，a.下載後用，b.使用CDN
+$(document).ready(function(){
+   //DOM Tree 產生了
+   //程式碼....
+
+
+})
+
+$(function(){
+   //DOM Tree 產生了
+  
+   //步驟一 找到要控制的對象(html tag)  $('selectors')
+   //步驟三 要做甚麼事(內容的改變、樣式的改變)
+     $('selectors').css({})
+                   .text("abcd")
+                   ....
+   
+})
+
 
