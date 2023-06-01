@@ -92,11 +92,21 @@
 
             //動態生成的按鈕要綁定click事件的寫法
             $('#buttons').on('click', 'button', function (event) {
+                event.stopPropagation();
                 console.log(event.target);
             })
             $('#buttonAdd').on('click', function () {
                 $('#buttons').append('<button>Click</button>')
             })
+
+            //有事件氣泡現象           
+            //mouseover、mouseout
+            //focusin、focusout
+
+            //沒有事件氣泡現象
+            //mouseenter、mouseleave 
+            //focus、blur
+
         })
     </script>
 </body>
