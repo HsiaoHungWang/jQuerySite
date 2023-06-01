@@ -45,7 +45,14 @@
                 // $('#div1>img').slideToggle(1500); 
                 $('#div1>img').fadeToggle(1500);
             })
-
+            $('#div1>img').on({
+                'mouseenter': function () {
+                    $(this).fadeTo(1500, 0.1);
+                },
+                'mouseleave': function () {
+                    $(this).fadeTo(1500, 1);
+                }
+            })
         })
     </script>
 </body>
