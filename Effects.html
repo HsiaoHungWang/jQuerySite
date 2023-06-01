@@ -22,6 +22,7 @@
             <div class="col-2"></div>
             <div class="col-8">
                 <h2>jQuery 練習</h2>
+                <button id="button1" class="btn btn-primary">show/hide</button>
                 <div id="div1">
                     <img src="images/transformer.jpg" />
                 </div>
@@ -36,11 +37,15 @@
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script>
         $(function () {
-            $('#div1>img').hide(1500, function () {
-                $(this).show(1500);
+            // $('#div1>img').hide(1500, function () {
+            //     $(this).show(1500);
+            // })
+            $('#button1').on('click', function () {
+                // $('#div1>img').toggle(1500);
+                // $('#div1>img').slideToggle(1500); 
+                $('#div1>img').fadeToggle(1500);
             })
 
-            //.toggle(1500);
         })
     </script>
 </body>
