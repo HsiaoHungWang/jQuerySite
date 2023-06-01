@@ -69,6 +69,36 @@
                         <td>H</td>
                         <td>I</td>
                     </tr>
+                    <tr>
+                        <td>A</td>
+                        <td>B</td>
+                        <td>C</td>
+                    </tr>
+                    <tr>
+                        <td>D</td>
+                        <td>E</td>
+                        <td>F</td>
+                    </tr>
+                    <tr>
+                        <td>G</td>
+                        <td>H</td>
+                        <td>I</td>
+                    </tr>
+                    <tr>
+                        <td>A</td>
+                        <td>B</td>
+                        <td>C</td>
+                    </tr>
+                    <tr>
+                        <td>D</td>
+                        <td>E</td>
+                        <td>F</td>
+                    </tr>
+                    <tr>
+                        <td>G</td>
+                        <td>H</td>
+                        <td>I</td>
+                    </tr>
                 </table>
 
                 <input type="text" autofocus><span></span>
@@ -136,6 +166,23 @@
             })
             $('#s1>div:empty').text("div1")
             $('#s1>div:has("p")').css('background-color', 'green')
+
+            //child filter selectors
+            // $('.simpleTable td:first-child').css({
+            //     'background-color': 'yellow'
+            // })
+            // $('.simpleTable td:last-child').css({
+            //     'background-color': 'orange'
+            // })
+            // $('.simpleTable td:nth-child(2)').css({
+            //     'background-color': 'orange'
+            // })
+            $('.simpleTable tr:nth-child(2n)').css({
+                'background-color': 'orange'
+            })
+            $('.simpleTable tr:nth-child(2n+1)').css({
+                'background-color': 'yellow'
+            })
         })
     </script>
 </body>
