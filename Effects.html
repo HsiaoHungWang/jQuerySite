@@ -13,6 +13,12 @@
             width: 280px;
             /* display: none; */
         }
+
+        #alligator {
+            position: absolute;
+            left: 1000px;
+            top: 200px;
+        }
     </style>
 </head>
 
@@ -26,6 +32,7 @@
                 <div id="div1">
                     <img src="images/transformer.jpg" />
                 </div>
+                <img src="images/alligator.gif" id="alligator" />
             </div>
             <div class="col-2"></div>
         </div>
@@ -52,6 +59,16 @@
                 'mouseleave': function () {
                     $(this).fadeTo(1500, 1);
                 }
+            })
+            $('#alligator').on('click', function () {
+                $(this).animate({
+                    left: '100px',
+                    width: '200px',
+                    opacity: 0.2
+                }, 3000, function () {
+                    $(this).hide(1000);
+                });
+
             })
         })
     </script>
