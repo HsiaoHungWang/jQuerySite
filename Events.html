@@ -25,6 +25,15 @@
         #file1 {
             display: none;
         }
+
+        #scrollToTop {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -44,7 +53,47 @@
                     <button>click3</button>
 
                 </div>
-
+                <hr />
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ut officiis, laudantium quas
+                    voluptatum officia eaque nisi explicabo non adipisci, expedita molestias excepturi nostrum nulla
+                    impedit! Omnis rem corporis reprehenderit.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ut officiis, laudantium quas
+                    voluptatum officia eaque nisi explicabo non adipisci, expedita molestias excepturi nostrum nulla
+                    impedit! Omnis rem corporis reprehenderit.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ut officiis, laudantium quas
+                    voluptatum officia eaque nisi explicabo non adipisci, expedita molestias excepturi nostrum nulla
+                    impedit! Omnis rem corporis reprehenderit.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ut officiis, laudantium quas
+                    voluptatum officia eaque nisi explicabo non adipisci, expedita molestias excepturi nostrum nulla
+                    impedit! Omnis rem corporis reprehenderit.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ut officiis, laudantium quas
+                    voluptatum officia eaque nisi explicabo non adipisci, expedita molestias excepturi nostrum nulla
+                    impedit! Omnis rem corporis reprehenderit.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ut officiis, laudantium quas
+                    voluptatum officia eaque nisi explicabo non adipisci, expedita molestias excepturi nostrum nulla
+                    impedit! Omnis rem corporis reprehenderit.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ut officiis, laudantium quas
+                    voluptatum officia eaque nisi explicabo non adipisci, expedita molestias excepturi nostrum nulla
+                    impedit! Omnis rem corporis reprehenderit.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ut officiis, laudantium quas
+                    voluptatum officia eaque nisi explicabo non adipisci, expedita molestias excepturi nostrum nulla
+                    impedit! Omnis rem corporis reprehenderit.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ut officiis, laudantium quas
+                    voluptatum officia eaque nisi explicabo non adipisci, expedita molestias excepturi nostrum nulla
+                    impedit! Omnis rem corporis reprehenderit.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ut officiis, laudantium quas
+                    voluptatum officia eaque nisi explicabo non adipisci, expedita molestias excepturi nostrum nulla
+                    impedit! Omnis rem corporis reprehenderit.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ut officiis, laudantium quas
+                    voluptatum officia eaque nisi explicabo non adipisci, expedita molestias excepturi nostrum nulla
+                    impedit! Omnis rem corporis reprehenderit.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ut officiis, laudantium quas
+                    voluptatum officia eaque nisi explicabo non adipisci, expedita molestias excepturi nostrum nulla
+                    impedit! Omnis rem corporis reprehenderit.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ut officiis, laudantium quas
+                    voluptatum officia eaque nisi explicabo non adipisci, expedita molestias excepturi nostrum nulla
+                    impedit! Omnis rem corporis reprehenderit.</p>
+                <img src="images/arrow.png" id="scrollToTop" />
             </div>
             <div class="col-2">
                 <div class="img-wrap"><img id="img1" src="images/person-empty.png"></div>
@@ -106,6 +155,19 @@
             //沒有事件氣泡現象
             //mouseenter、mouseleave 
             //focus、blur
+
+            $(window).on('scroll', function () {
+                console.log($(this).scrollTop());
+                if ($(this).scrollTop() > 300) {
+                    $('#scrollToTop').fadeIn(1000);
+                } else {
+                    $('#scrollToTop').fadeOut(1000);
+                }
+            })
+
+            $('#scrollToTop').on('click', function () {
+                $('html, body').animate({ scrollTop: 0 }, 500);
+            })
 
         })
     </script>
