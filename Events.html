@@ -37,7 +37,13 @@
                 <button type="button" id="buttonOn" class="btn btn-primary">on</button>
                 <button type="button" id="buttonOne" class="btn btn-primary">one</button>
                 <button type="button" id="buttonOff" class="btn btn-primary">off</button>
+                <button type="button" id="buttonAdd" class="btn btn-danger">add button</button>
+                <div id="buttons">
+                    <button>click1</button>
+                    <button>click2</button>
+                    <button>click3</button>
 
+                </div>
 
             </div>
             <div class="col-2">
@@ -73,11 +79,23 @@
             $('#file1').on('change', function () {
                 //預覽圖
                 const reader = new FileReader();
+                //load事件表示FileReader物件已經把圖讀完了
                 reader.addEventListener('load', event => {
+                    // console.log(event.target);
+                    // console.log(event.target.result);
+                    //<img src="??"
                     $('#img1').attr('src', event.target.result);
                 })
                 reader.readAsDataURL(this.files[0])
 
+            })
+
+            //動態生成的按鈕要綁定click事件的寫法
+            $('#buttons').on('click', 'button', function (event) {
+                console.log(event.target);
+            })
+            $('#buttonAdd').on('click', function () {
+                $('#buttons').append('<button>Click</button>')
             })
         })
     </script>
