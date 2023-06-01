@@ -26,6 +26,7 @@
                 <ul id="names">
                     <li class="completed">Guest1</li>
                     <li>Guest2</li>
+                    <li class="completed">Guest3</li>
                 </ul>
             </div>
             <div class="col-2"></div>
@@ -51,6 +52,14 @@
             //移除
             //$('#names').empty();
             //$('#names>li:nth-child(1)').remove();
+
+            //each()
+            //console.log($('#names>li').length);
+            $('#names>li').each(function () {
+                if ($(this).hasClass('completed')) {
+                    $(this).remove();
+                }
+            })
         })
     </script>
 </body>
