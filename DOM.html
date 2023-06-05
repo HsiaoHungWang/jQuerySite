@@ -62,13 +62,15 @@
                 <span id="span1"></span>
                 <hr />
                 <div id="div2">
+                    <input type="button" id="toggleCheckbox" value="checked的切換">
                     <input type="checkbox" id="toggle">Toggle All<br />
                     <input type="checkbox" name="a" value="a1">A1
                     <input type="checkbox" name="a" value="a2">A2
                     <input type="checkbox" name="a" value="a3">A3
                     <input type="checkbox" name="a" value="a4">A4
                     <input type="checkbox" name="a" value="a5">A5
-
+                    <input type="button" id="buttonChecked" value="取出打勾的checkbox value">
+                    <span></span>
 
                 </div>
                 <hr />
@@ -180,6 +182,13 @@
                 //     theH.addClass('s2')
                 // }
                 $('#theH').toggleClass('s2')
+            })
+
+            $('#toggleCheckbox').on('click', function () {
+                $(':checkbox[name="a"]').each(function () {
+                    const b = !$(this).prop('checked');
+                    $(this).prop('checked', b);
+                })
             })
 
         })
