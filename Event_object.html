@@ -30,7 +30,14 @@
             <div class="col-2"></div>
             <div class="col-8">
                 <h2>jQuery 練習</h2>
-                <input type="text" id="text1" />
+                <form action="get.php">
+                    <!--get.php?userName=abc&key=value&key=value-->
+                    <input type="text" id="text1" name="userName" placeholder="請輸入姓名" />
+                    <input type="text" id="text2" name="age" placeholder="請輸入年紀" />
+                    <input id="submit1" type="submit" value="送出">
+                </form>
+
+                <a href="https://www.ispan.com.tw">iSpan</a>
                 <div id="div1"></div>
             </div>
             <div class="col-2"></div>
@@ -97,7 +104,15 @@
                 }
             })
 
-
+            $('#submit1').on('click', function (event) {
+                event.preventDefault();
+                if ($('#text1').val() === "") {
+                    alert("請輸入姓名");
+                }
+            })
+            // $('form').on('submit', function (event) {
+            //     event.preventDefault();
+            // })
         })
     </script>
 </body>
