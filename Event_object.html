@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+        body {
+            height: 300vh;
+        }
+
+        #div1 {
+            width: 150px;
+            height: 150px;
+            background-color: beige;
+            top: 300px;
+            left: 300px;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <h2>jQuery 練習</h2>
+                <input type="text" id="text1" />
+                <div id="div1"></div>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            // 物件.屬性 = ""
+            // 物件.方法()//人.吃()//車.吃()
+            //keydown、keyup、keypres
+            $('#text1').on('keypress', function (event) {
+                console.log(event);
+                console.log(event.key);
+                console.log(event.keyCode);
+                //keydown 事件
+                //a-z 65-90
+                //0-9 48-57
+                //A-z 65-90
+                //Enter 13
+
+                //keypress
+                //A-Z 65-90
+                //a-z 97-122
+
+                //功能鍵 shift、ctrl、enter、tab
+            })
+
+            // $('#div1').on('click', function (event) {
+            //     console.log(event);
+            //     //offsetX、offsetY 以div左上角當成0,0來計算位置
+            //     //screenX、screenY 以螢幕的左上角當成0,0來計算位置
+            //     //pageX、pageY 以瀏覽器的左上角當成0,0來計算位置
+            //     //clientX、clientY 以可視範圍的左上角當成0,0來計算位置
+            // })
+
+            let startX, startY, divLeft, divTop, flag = false;
+            $('#div1').on({
+                'mousedown': function (event) {
+                    flag = true;
+                    // console.log("clientXY：", event.clientX, event.clientY);
+                    // console.log("divXY：", $(this).offset().top, $(this).offset().left);
+                    startX = event.clientX;
+                    startY = event.clientY;
+                    divLeft = $(this).offset().left;
+                    divTop = $(this).offset().top;
+                },
+                'mouseup': function (event) {
+                    flag = false;
+                },
+                'mousemove': function (event) {
+                    if (flag) {
+                        const moveX = divLeft + (event.clientX - startX);
+                        const moveY = divTop + (event.clientY - startY);
+                        $(this).css({
+                            'left': moveX,
+                            'top': moveY
+                        })
+                    }
+                }
+            })
+
+
+        })
+    </script>
+</body>
+
+</html>
