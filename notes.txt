@@ -59,3 +59,18 @@ $(function(){
 window.confirm("真的要去嗎？")
 
 
+<h1 class="myH s1" title="aaaa">write less, do more</h1>
+<input type="text" value="guest" id="">
+
+元素內容
+text()、text("aaaa")、html()
+append()、prepend()、before()、after()
+remove()、empty()
+
+元素屬性
+value => val()、val("Tom")
+class => addClass('s1')
+??  => prop()
+
+tilte => attr("title")、attr("title","abcde")
+

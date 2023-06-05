@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-2"></div>
             <div class="col-8">
-                <h2>jQuery 練習</h2>
+                <h2 id="myH">jQuery 練習</h2>
                 <input type="text" id="userName"><input type="button" value="add" id="buttonAdd">
                 <ul id="names">
                     <li class="completed">Guest1</li>
@@ -42,12 +42,28 @@
             $('#userName').val("Guest")
             $('#buttonAdd').on('click', function () {
                 const name = $('#userName').val();
-                // $('#names').append("<li>" + name + "</li>");
+                // $('#names').text("<li>" + name + "</li>"); //會把標籤當成純文字
+                //$('#names').html("<li>" + name + "</li>"); //會把標籤當成標籤來處理
                 $('#names').append(`<li>${name}</li>`);
             })
             $('#names').on('click', 'li', function () {
                 $(this).toggleClass('completed');
             })
+
+
+            // $('#myH').append("do more")
+            //     .prepend("write less")
+            //     .after("<u>h2結束標籤的後面</u>")
+            //     .before("<u>h2開始標籤的前面</u>")
+
+            // this vs $(this)
+            // document vs $(document)
+            $("<u>h2結束標籤的後面</u>").insertAfter('#myH');
+            $("<u>h2開始標籤的前面</u>").insertBefore('#myH');
+            $("<i>do more</i>").appendTo('#myH')
+            $("<i>write less</i>").prependTo('#myH')
+            //$('#myH').empty(); //清除內容
+            $('#myH').remove();//刪除節點(元素)
 
             //移除
             //$('#names').empty();
