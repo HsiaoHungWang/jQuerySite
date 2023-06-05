@@ -30,11 +30,12 @@
             <div class="col-2"></div>
             <div class="col-8">
                 <h2>jQuery 練習</h2>
-                <form action="get.php">
+                <form action="get.php" method="get">
                     <!--get.php?userName=abc&key=value&key=value-->
                     <input type="text" id="text1" name="userName" placeholder="請輸入姓名" />
                     <input type="text" id="text2" name="age" placeholder="請輸入年紀" />
-                    <input id="submit1" type="submit" value="送出">
+                    <input id="submit1" type="submit" value="送出"> <!--submit、click、reset-->
+                    <button id="button1">submit</button>
                 </form>
 
                 <a id="outlink" onclick="return window.confirm('要去嗎?')" href="https://www.ispan.com.tw">iSpan</a>
@@ -81,6 +82,11 @@
             let startX, startY, divLeft, divTop, flag = false;
             $('#div1').on({
                 'mousedown': function (event) {
+                    console.log(event.button);
+                    //0 滑鼠左鍵
+                    //1 滾輪
+                    //2 滑鼠右鍵
+
                     flag = true;
                     // console.log("clientXY：", event.clientX, event.clientY);
                     // console.log("divXY：", $(this).offset().top, $(this).offset().left);
@@ -112,6 +118,10 @@
                     $('form').submit();
                 }
             })
+            $('#button1').on('click', function (event) {
+                event.preventDefault();
+                //todo ajax 送出資料到伺服器端
+            })
             // $('form').on('submit', function (event) {
             //     event.preventDefault();
             // })
@@ -122,6 +132,11 @@
             //         return false;
             //     }
             // })
+
+            $(document).on('contextmenu', function (event) {
+                event.preventDefault();
+                //return false;
+            })
         })
     </script>
 </body>
