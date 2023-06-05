@@ -108,6 +108,8 @@
                 event.preventDefault();
                 if ($('#text1').val() === "") {
                     alert("請輸入姓名");
+                } else {
+                    $('form').submit();
                 }
             })
             // $('form').on('submit', function (event) {
