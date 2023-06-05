@@ -56,4 +56,6 @@ $(function(){
    
 })
 
+window.confirm("真的要去嗎？")
+
 

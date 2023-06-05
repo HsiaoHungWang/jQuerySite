@@ -37,7 +37,7 @@
                     <input id="submit1" type="submit" value="送出">
                 </form>
 
-                <a href="https://www.ispan.com.tw">iSpan</a>
+                <a id="outlink" onclick="return window.confirm('要去嗎?')" href="https://www.ispan.com.tw">iSpan</a>
                 <div id="div1"></div>
             </div>
             <div class="col-2"></div>
@@ -114,6 +114,13 @@
             })
             // $('form').on('submit', function (event) {
             //     event.preventDefault();
+            // })
+            // $('#outlink').on('click', function (event) {
+            //     //! => not false => true
+            //     if (!window.confirm("真的要去嗎?")) {
+            //         //event.preventDefault();
+            //         return false;
+            //     }
             // })
         })
     </script>
