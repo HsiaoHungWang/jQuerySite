@@ -22,6 +22,11 @@
             <div class="col-2"></div>
             <div class="col-8">
                 <h2 id="myH">jQuery 練習</h2>
+                <a href="Effects.html">Effects</a> | 
+                <a href="Events.html">Events</a> | 
+                <a href="https://www.ispan.com.tw">iSpan</a> | 
+                <a href="https://tw.yahoo.com">YAHOO</a>
+                <hr />
                 <input type="text" id="userName"><input type="button" value="add" id="buttonAdd">
                 <ul id="names">
                     <li class="completed">Guest1</li>
@@ -92,10 +97,12 @@
                 // console.log(opt.text())
                 // console.log(opt.html())
                 const text = opt.text();
-                const value = opt.val();
+                const value = $(this).val(); //opt.val();
                 const index = opt.index();
                 $('#span1').text(`${index}-${value}-${text}`);
             })
+
+            $('a').attr('target', '_blank');
 
 
         })
