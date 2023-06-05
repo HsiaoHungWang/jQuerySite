@@ -13,6 +13,25 @@
             color: #949494;
             text-decoration: line-through;
         }
+
+        .s1 {
+            color: orange;
+            text-decoration: underline;
+            border: 1px solid red;
+            text-align: center;
+            background-color: green;
+            width: 400px;
+        }
+
+        .s2 {
+            color: green;
+            text-decoration: none;
+            border: 3px double red;
+            text-align: center;
+            background-color: red;
+            width: 400px;
+            border-radius: 25px;
+        }
     </style>
 </head>
 
@@ -52,6 +71,13 @@
 
 
                 </div>
+                <hr />
+                <input type="button" value="切換樣式" id="classToggle">
+                <h1 id="theH">write less, do more</h1>
+                <h1>write less, do more</h1>
+                <h1>write less, do more</h1>
+                <h1>write less, do more</h1>
+                <h1>write less, do more</h1>
             </div>
             <div class="col-2"></div>
         </div>
@@ -134,6 +160,26 @@
             $('#toggle').on('change', function () {
                 const b = $(this).prop('checked');
                 $(':checkbox[name="a"]').prop('checked', b);
+            })
+
+
+            $('h1').addClass('s1').on({
+                'mouseenter': function () {
+                    $(this).removeClass('s1').addClass('s2');
+                },
+                'mouseleave': function () {
+                    $(this).removeClass('s2').addClass('s1');
+                }
+            })
+
+            $('#classToggle').on('click', function () {
+                // const theH = $('#theH');
+                // if (theH.hasClass('s2')) {
+                //     theH.removeClass('s2')
+                // } else {
+                //     theH.addClass('s2')
+                // }
+                $('#theH').toggleClass('s2')
             })
 
         })
