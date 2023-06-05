@@ -70,7 +70,7 @@
                     <input type="checkbox" name="a" value="a4">A4
                     <input type="checkbox" name="a" value="a5">A5
                     <input type="button" id="buttonChecked" value="取出打勾的checkbox value">
-                    <span></span>
+                    <span id="span2"></span>
 
                 </div>
                 <hr />
@@ -189,6 +189,15 @@
                     const b = !$(this).prop('checked');
                     $(this).prop('checked', b);
                 })
+            })
+
+            $('#buttonChecked').on('click', function () {
+                const theSpan = $('#span2');
+                let datas = [];
+                $(':checked[name="a"]').each(function () {
+                    datas.push($(this).val());
+                })
+                theSpan.append(datas.join(","));
             })
 
         })
