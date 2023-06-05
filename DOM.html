@@ -22,9 +22,9 @@
             <div class="col-2"></div>
             <div class="col-8">
                 <h2 id="myH">jQuery 練習</h2>
-                <a href="Effects.html">Effects</a> | 
-                <a href="Events.html">Events</a> | 
-                <a href="https://www.ispan.com.tw">iSpan</a> | 
+                <a href="Effects.html">Effects</a> |
+                <a href="Events.html">Events</a> |
+                <a href="https://www.ispan.com.tw">iSpan</a> |
                 <a href="https://tw.yahoo.com">YAHOO</a>
                 <hr />
                 <input type="text" id="userName"><input type="button" value="add" id="buttonAdd">
@@ -41,6 +41,17 @@
                     <option value="d">Item4</option>
                 </select>
                 <span id="span1"></span>
+                <hr />
+                <div id="div2">
+                    <input type="checkbox" id="toggle">Toggle All<br />
+                    <input type="checkbox" name="a" value="a1">A1
+                    <input type="checkbox" name="a" value="a2">A2
+                    <input type="checkbox" name="a" value="a3">A3
+                    <input type="checkbox" name="a" value="a4">A4
+                    <input type="checkbox" name="a" value="a5">A5
+
+
+                </div>
             </div>
             <div class="col-2"></div>
         </div>
@@ -102,8 +113,28 @@
                 $('#span1').text(`${index}-${value}-${text}`);
             })
 
-            $('a').attr('target', '_blank');
+            $('a[href^="https"]').attr('target', '_blank');
 
+
+            // console.log($('#div2>:checkbox:nth-child(1)').attr('checked'));  //true  checked
+            // console.log($('#div2>:checkbox:nth-child(2)').attr('checked'));  //on    checked
+            // console.log($('#div2>:checkbox:nth-child(3)').attr('checked'));  //checked
+            // console.log($('#div2>:checkbox:nth-child(4)').attr('checked'));  //undefined
+            // console.log($('#div2>:checkbox:nth-child(5)').attr('checked'));  //??     checked
+
+            //prop()=>
+            // console.log($('#div2>:checkbox:nth-child(1)').prop('checked'));  //true
+            // console.log($('#div2>:checkbox:nth-child(2)').prop('checked'));  //true
+            // console.log($('#div2>:checkbox:nth-child(3)').prop('checked'));  //true
+            // console.log($('#div2>:checkbox:nth-child(4)').prop('checked'));  //false
+            // console.log($('#div2>:checkbox:nth-child(5)').prop('checked'));  //true
+            // $('#div2>:checkbox:nth-child(4)').prop('checked', true);
+            // $('#div2>:checkbox:nth-child(5)').prop('checked', false);
+
+            $('#toggle').on('change', function () {
+                const b = $(this).prop('checked');
+                $(':checkbox[name="a"]').prop('checked', b);
+            })
 
         })
     </script>

@@ -1,4 +1,4 @@
-JavaScript > Browser  data > php > data > insert into DB... select * from tablename where name='Jack' and password ='1234'
+hiJavaScript > Browser  data > php > data > insert into DB... select * from tablename where name='Jack' and password ='1234'
            > Node.js 
 
 http How are you? > How are you?
@@ -70,7 +70,21 @@ remove()、empty()
 元素屬性
 value => val()、val("Tom")
 class => addClass('s1')
-??  => prop()
+checked、disabled、selected  => prop("checked",true)  prop("checked", false)
 
 tilte => attr("title")、attr("title","abcde")
+
+HTML 4.01
+<img src="a.gif">
+<hr>
+<input type="button" disabled>
+
+XHTML
+<hr />
+<input type="button" disabled="disabled">
+
+HTML5
+<hr>
+<input type="button" disabled>
+
 
