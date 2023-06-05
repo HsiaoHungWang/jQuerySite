@@ -37,44 +37,71 @@
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script>
         $(function () {
-            // $('.container').on('mouseover', function () {
+            $('.container').on('mouseover', function (event) {
+                event.stopPropagation(); //停止事件氣泡現象
+                //this 表示觸發事件的物件
+                console.log("this：", this)
+                console.log("target：", event.target)
+                console.log("currentTarget：", event.currentTarget)
+                console.log('container:mouseover')
+            })
+            // $('.container').on('mouseover', event => {
+            //     //this 不是觸發事件的物件，是docuemnt物件
+            //     console.log("this：", this)
+            //     console.log("target：", event.target)
+            //     console.log("currentTarget：", event.currentTarget)
             //     console.log('container:mouseover')
             // })
-            // $('#div1').on('mouseover', function () {
-            //     console.log('div:mouseover')
-            // })
-            // $('#div1>h2').on('mouseover', function () {
-            //     console.log('h2:mouseover')
-            // })
-            // $('.container').on('mouseout', function () {
+            $('#div1').on('mouseover', function (event) {
+                event.stopPropagation();
+                console.log("target：", event.target)
+                console.log("currentTarget：", event.currentTarget)
+                console.log('div:mouseover')
+            })
+            $('#div1>h2').on('mouseover', function (event) {
+                event.stopPropagation();
+                console.log("target：", event.target)
+                console.log("currentTarget：", event.currentTarget)
+                console.log('h2:mouseover')
+            })
+            // $('.container').on('mouseout', function (event) {
+            //     event.stopPropagation();
+            //     console.log("target：", event.target)
+            //     console.log("currentTarget：", event.currentTarget)
             //     console.log('container:mouseout')
             // })
-            // $('#div1').on('mouseout', function () {
+            // $('#div1').on('mouseout', function (event) {
+            //     event.stopPropagation();
+            //     console.log("target：", event.target)
+            //     console.log("currentTarget：", event.currentTarget)
             //     console.log('div:mouseout')
             // })
-            // $('#div1>h2').on('mouseout', function () {
+            // $('#div1>h2').on('mouseout', function (event) {
+            //     event.stopPropagation();
+            //     console.log("target：", event.target)
+            //     console.log("currentTarget：", event.currentTarget)
             //     console.log('h2:mouseout')
             // })
 
 
-            $('.container').on('mouseenter', function () {
-                console.log('container:mouseenter')
-            })
-            $('#div1').on('mouseenter', function () {
-                console.log('div:mouseenter')
-            })
-            $('#div1>h2').on('mouseenter', function () {
-                console.log('h2:mouseenter')
-            })
-            $('.container').on('mouseleave', function () {
-                console.log('container:mouseleave')
-            })
-            $('#div1').on('mouseleave', function () {
-                console.log('div:mouseleave')
-            })
-            $('#div1>h2').on('mouseleave', function () {
-                console.log('h2:mouseleave')
-            })
+            // $('.container').on('mouseenter', function () {
+            //     console.log('container:mouseenter')
+            // })
+            // $('#div1').on('mouseenter', function () {
+            //     console.log('div:mouseenter')
+            // })
+            // $('#div1>h2').on('mouseenter', function () {
+            //     console.log('h2:mouseenter')
+            // })
+            // $('.container').on('mouseleave', function () {
+            //     console.log('container:mouseleave')
+            // })
+            // $('#div1').on('mouseleave', function () {
+            //     console.log('div:mouseleave')
+            // })
+            // $('#div1>h2').on('mouseleave', function () {
+            //     console.log('h2:mouseleave')
+            // })
         })
     </script>
 </body>
