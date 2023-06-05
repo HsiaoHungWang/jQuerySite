@@ -29,13 +29,13 @@
                     <li class="completed">Guest3</li>
                 </ul>
 
-                <select>
+                <select id="select1">
                     <option value="a">Item1</option>
                     <option value="b">Item2</option>
                     <option value="c">Item3</option>
                     <option value="d">Item4</option>
                 </select>
-                <span></span>
+                <span id="span1"></span>
             </div>
             <div class="col-2"></div>
         </div>
@@ -84,6 +84,20 @@
                     $(this).remove();
                 }
             })
+
+            $('#select1').on('change', function () {
+                //this 觸發事件的物件
+                //步驟三讀出內容 value、text
+                const opt = $('#select1>:selected');  //Options[selectedIndex].text
+                // console.log(opt.text())
+                // console.log(opt.html())
+                const text = opt.text();
+                const value = opt.val();
+                const index = opt.index();
+                $('#span1').text(`${index}-${value}-${text}`);
+            })
+
+
         })
     </script>
 </body>
