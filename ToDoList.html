@@ -68,7 +68,30 @@
         $(function () {
             countTodo();
 
+            //新增todo
+            $('#addTodo').on('keypress', function (event) {
+                //console.log(event.key);
+                //console.log(event.keyCode);
+                if (event.keyCode === 13) {
+                    const todo = $(this).val(); //取出todod
 
+                    const datas = `
+                    <li class="list-group-item">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <input type="checkbox" class="form-check-input me-3">
+                                <label class="form-check-label">${todo}</label>
+                            </div>
+                            <button class="badge bg-danger rounded-pill border-0">X</button>
+                        </div>
+                    </li>     
+                    `
+                    //  $('#listTodo').append(datas); 
+                    $(datas).hide().appendTo('#listTodo').slideDown(500); //加入一點效果
+                    $(this).val(""); //清除Textbox中的資料
+                    countTodo(); //重新計算待做工作的數量
+                }
+            })
             //計算還有多少個工作要做
             function countTodo() {
                 const total = $('input[type="checkbox"]:not(":checked")').length;
