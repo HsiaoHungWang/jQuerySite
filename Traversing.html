@@ -98,8 +98,18 @@
 
             const theLi = $('.item-b');
             //試試看印出 A、C、I、III、1、2、3
-            console.log(theLi.text());
-
+            //console.log(theLi.text());
+            console.log(theLi.prev().text()); //A
+            console.log(theLi.next().text()); //C
+            //console.log(theLi.parents('li')); //II 
+            console.log(theLi.parents('li').prev().text()); //I
+            console.log(theLi.parents('li').next().text()); //III
+            // console.log(theLi.find('li').eq(0).text()); //1
+            // console.log(theLi.find('li').eq(1).text()); //2
+            // console.log(theLi.find('li').eq(2).text()); //3
+            console.log(theLi.find('li:first-child').text()); //1
+            console.log(theLi.find('li:nth-child(2)').text()); //2
+            console.log(theLi.find('li:last-child').text()); //3
         })
     </script>
 </body>
