@@ -13,6 +13,10 @@
             color: #949494;
             text-decoration: line-through;
         }
+
+        .hide {
+            display: none !important;
+        }
     </style>
 </head>
 
@@ -32,6 +36,7 @@
                             </div>
                             <button class="badge bg-danger rounded-pill border-0">X</button>
                         </div>
+                        <input type="text" class="form-control hide" value="aaaa">
                     </li>
                     <li class="list-group-item">
                         <div class="d-flex justify-content-between">
@@ -41,6 +46,7 @@
                             </div>
                             <button class="badge bg-danger rounded-pill border-0">X</button>
                         </div>
+                        <input type="text" class="form-control hide" value="aaaa">
                     </li>
                     <li class="list-group-item">
                         <div class="d-flex justify-content-between">
@@ -50,6 +56,7 @@
                             </div>
                             <button class="badge bg-danger rounded-pill border-0">X</button>
                         </div>
+                        <input type="text" class="form-control hide" value="aaaa">
                     </li>
                 </ul>
                 <div id="summaryTodo" class="mt-3 d-flex justify-content-between">
@@ -84,6 +91,7 @@
                             </div>
                             <button class="badge bg-danger rounded-pill border-0">X</button>
                         </div>
+                        <input type="text" class="form-control hide" value="${todo}">
                     </li>     
                     `
                     //將新增的todo加入到網頁上
@@ -114,6 +122,22 @@
                     })
 
                 })
+                .on('dblclick', 'li', function () {
+                    //編輯模式與瀏覽模式的切換
+                    $(this).children('input').toggleClass('hide').end().children('div').toggleClass('hide');
+                    // $(this).children('input').toggleClass('hide')
+                    // $(this).children('div').toggleClass('hide');
+                })
+                .on('keypress', 'input[type="text"]', function (event) {
+                    if (event.keyCode === 13) {
+                        const data = $(this).val();
+                        //將修改的結果更新到label中
+                        $(this).parent('li').find('label').text(data);
+                        //切換回到瀏覽模式
+                        $(this).toggleClass('hide').parent('li').children('div').toggleClass('hide');
+                    }
+                })
+
             //清除已經完成的所有工作
             $('#buttonComplete').on('click', function () {
                 listTodo.find(':checked').each(function () {
