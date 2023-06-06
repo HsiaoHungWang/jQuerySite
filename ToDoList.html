@@ -68,6 +68,8 @@
         $(function () {
             countTodo();
 
+
+            //計算還有多少個工作要做
             function countTodo() {
                 const total = $('input[type="checkbox"]:not(":checked")').length;
                 $('#summaryTodo>strong>span').text(total);
