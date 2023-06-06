@@ -17,6 +17,9 @@
             <div class="col-8">
                 <h2>jQuery 練習</h2>
                 <input type="file" id="xmlFile">
+                <div id="div1" class="row row-cols-1 row-cols-md-3 g-4">
+
+                </div>
             </div>
             <div class="col-2"></div>
         </div>
@@ -35,14 +38,37 @@
                     const xmlDoc = $.parseXML(event.target.result);
                     // console.log(xmlDoc)
                     let i = 0;
+                    const docFrag = $(document.createDocumentFragment())
                     $(xmlDoc).find('Section').each(function () {
                         i += 1;
                         if (i <= 20) {
                             //stitle、xbody、img、address
-                            console.log($(this).children('stitle').text());
+                            const title = $(this).children('stitle').text();
+                            const body = $(this).children('xbody').text().substring(0, 100);
+                            const address = $(this).children('address').text();
+                            const img = $(this).find('img').first().text();
+
+                            const datas = `
+                                <div class="col">
+                                    <div class="card h-100">
+                                        <img src="${img}" class="card-img-top" alt="${title}">
+                                        <div class="card-body">
+                                            <h5 class="card-title">${title}</h5>
+                                            <p class="card-text">${body}</p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <small class="text-body-secondary">${address}</small>
+                                        </div>
+                                    </div>
+                                </div>                          
+                             `
+
+                            docFrag.append(datas);
                         }
 
                     })
+
+                    $('#div1').html(docFrag);
                 })
                 reader.readAsText(this.files[0]);
 
