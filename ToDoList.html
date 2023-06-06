@@ -73,8 +73,8 @@
                 //console.log(event.key);
                 //console.log(event.keyCode);
                 if (event.keyCode === 13) {
-                    const todo = $(this).val(); //取出todod
-
+                    const todo = $(this).val(); //取出todo
+                    //設定要加到網頁上的HTML標籤
                     const datas = `
                     <li class="list-group-item">
                         <div class="d-flex justify-content-between">
@@ -86,8 +86,10 @@
                         </div>
                     </li>     
                     `
+                    //將新增的todo加入到網頁上
                     //  $('#listTodo').append(datas); 
-                    $(datas).hide().appendTo('#listTodo').slideDown(500); //加入一點效果
+                    //加入一點效果
+                    $(datas).hide().appendTo('#listTodo').slideDown(500);
                     $(this).val(""); //清除Textbox中的資料
                     countTodo(); //重新計算待做工作的數量
                 }
