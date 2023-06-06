@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        .slideshow {
+            display: flex;
+            justify-content: center;
+        }
+
+        .slideshow>div {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #slides {
+            padding-left: 0px;
+            display: flex;
+            list-style-type: none;
+            width: 700%;
+            transform: translateX(0px);
+            transition: .5s;
+        }
+
+
+        #slides img {
+            width: 100%;
+            object-fit: cover;
+
+        }
+
+        .slideshow>div .left-area,
+        .slideshow>div .right-area {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 5%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: .1s;
+        }
+
+        .slideshow>div .left-area {
+            left: 0;
+        }
+
+        .slideshow>div .right-area {
+            right: 0;
+        }
+
+        .slideshow>div .left-area:hover,
+        .slideshow>div .right-area:hover {
+            background-color: rgba(255, 255, 255, 0.355);
+        }
+
+
+        .slideshow>div>.slider-dots {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding-left: 0;
+
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .slideshow>div>.slider-dots li {
+            width: 20px;
+            height: 20px;
+            border: 1px solid #fff;
+            border-radius: 50%;
+            margin: 0 4px;
+        }
+
+        .dot {
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="slideshow">
+            <div>
+                <ul id="slides">
+                    <li><img src="images/nature5.jpg" /></li>
+                    <li><img src="images/nature1.jpg" /></li>
+                    <li><img src="images/nature2.jpg" /></li>
+                    <li><img src="images/nature3.jpg" /></li>
+                    <li><img src="images/nature4.jpg" /></li>
+                    <li><img src="images/nature5.jpg" /></li>
+                    <li><img src="images/nature1.jpg" /></li>
+                </ul>
+
+                <ul class="slider-dots">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+
+                <div class="left-area">
+                    <button class="btn">
+                        <i class="bi bi-arrow-left-circle"></i>
+                    </button>
+                </div>
+                <div class="right-area">
+                    <button class="btn">
+                        <i class="bi bi-arrow-right-circle"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+
+
+
+
+
+        })
+
+    </script>
+</body>
+
+</html>
