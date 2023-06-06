@@ -46,6 +46,31 @@
     <script>
         $(function () {
             console.log($('img').eq(4).data('evaluate'))
+            //滑鼠移到星星上要新增clicked class   mouseenter addClass() prevAll()
+            //滑鼠離開星星要移除clicked class     mouseleave  removeClass() prevAll()
+            //滑鼠點選星星要讀出evaluate的分數顯示在div1中 click  data() text()
+            //滑鼠點選2次清除評分紀錄 dblclick  text()
+
+            let flag = false;
+            $('img').on({
+                'mouseenter': function () {
+                    $(this).addClass('clicked').prevAll().addClass('clicked');
+                },
+                'mouseleave': function () {
+                    //! => not  !false => true  !true => false
+                    if (!flag) {
+                        $(this).removeClass('clicked').prevAll().removeClass('clicked');
+                    }
+                },
+                'click': function () {
+                    flag = true;
+                    $('#div1').text(`分數為：${$(this).data('evaluate')}`)
+                },
+                'dblclick': function () {
+                    flag = false;
+                    $('#div1').text('請點選您的評價');
+                }
+            })
         })
     </script>
 </body>
