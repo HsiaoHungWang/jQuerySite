@@ -33,7 +33,16 @@
                 reader.addEventListener('load', function (event) {
                     //將讀取的文字內容轉型成XMLDOM物件
                     const xmlDoc = $.parseXML(event.target.result);
-                    console.log(xmlDoc)
+                    // console.log(xmlDoc)
+                    let i = 0;
+                    $(xmlDoc).find('Section').each(function () {
+                        i += 1;
+                        if (i <= 20) {
+                            //stitle、xbody、img、address
+                            console.log($(this).children('stitle').text());
+                        }
+
+                    })
                 })
                 reader.readAsText(this.files[0]);
 
