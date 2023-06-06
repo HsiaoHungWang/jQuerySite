@@ -16,10 +16,33 @@
             <div class="col-2"></div>
             <div class="col-8">
                 <h2>jQuery 練習</h2>
-                <ul>
+                <ul class="level-1">
+                    <li class="item-i">I</li>
+                    <li class="item-ii">II
+                        <ul class="level-2">
+                            <li class="item-a">A</li>
+                            <li class="item-b">B
+                                <ul class="level-3">
+                                    <li class="item-1">1</li>
+                                    <li class="item-2">2</li>
+                                    <li class="item-3">3</li>
+                                </ul>
+                            </li>
+                            <li class="item-c">C</li>
+                        </ul>
+                    </li>
+                    <li class="item-iii">III</li>
+                </ul>
+
+                <ul id="ul1">
                     <li>Item0</li>
                     <li>Item1</li>
-                    <li>Item2</li>
+                    <li>Item2
+                        <ul>
+                            <li>abc</li>
+                            <li>xyz</li>
+                        </ul>
+                    </li>
                     <li>Item3</li>
                     <li>Item4</li>
                 </ul>
@@ -39,6 +62,7 @@
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script>
         $(function () {
+            //PPT65
             // $('li').eq(3).css('background-color', 'silver')
             // $('li').even().css('background-color', 'silver')
             // $('li').odd().css('background-color', 'lightgray')
@@ -47,6 +71,7 @@
             // $('li').first().css('background-color', 'silver')
             // $('li').last().css('background-color', 'silver')
 
+            //PPT66
             //$('ul').has("li:contains('Item3')").css('background-color', 'lightgreen')
             //$('li').not(":nth-child(2n)").css('background-color', 'silver')
             // $('li').on('click', function () {
@@ -55,10 +80,26 @@
             //     }
             // })
             //$('li').filter(":nth-child(2n)").css('background-color', 'lightgreen')
-            const datas = $('li').map(function () {
-                return $(this).text();
-            });
-            console.log(datas);
+            // const datas = $('li').map(function () {
+            //     return $(this).text();
+            // });
+            // console.log(datas);
+
+            //PPT67
+            // const theLi = $('#ul1>li:nth-child(3)');
+            // console.log(theLi.text()); //Itm2
+            // console.log(theLi.prev().text()); //Item1
+            // console.log(theLi.next().text());  //Item3
+            //console.log(theLi.prevAll().text()); //Item1Item0
+            //console.log(theLi.nextAll().text());  //Item3Item4
+            //console.log(theLi.siblings().text());  //Item0Item3Item3Item4
+            // console.log(theLi.find('li').text());
+
+
+            const theLi = $('.item-b');
+            //試試看印出 A、C、I、III、1、2、3
+            console.log(theLi.text());
+
         })
     </script>
 </body>
