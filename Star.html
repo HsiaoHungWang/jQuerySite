@@ -54,7 +54,9 @@
             let flag = false;
             $('img').on({
                 'mouseenter': function () {
-                    $(this).addClass('clicked').prevAll().addClass('clicked');
+                    if (!flag) {
+                        $(this).addClass('clicked').prevAll().addClass('clicked');
+                    }
                 },
                 'mouseleave': function () {
                     //! => not  !false => true  !true => false
@@ -63,12 +65,16 @@
                     }
                 },
                 'click': function () {
-                    flag = true;
-                    $('#div1').text(`分數為：${$(this).data('evaluate')}`)
+                    if (!flag) {
+                        flag = true;
+                        $('#div1').text(`分數為：${$(this).data('evaluate')}`)
+                    }
+
                 },
                 'dblclick': function () {
                     flag = false;
                     $('#div1').text('請點選您的評價');
+                    $('img').removeClass('clicked')
                 }
             })
         })
