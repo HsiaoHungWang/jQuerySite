@@ -95,11 +95,33 @@
                 }
             })
 
-            //勾選完成的工作
-            $('#listTodo').on('change', 'input[type="checkbox"]', function () {
-                $(this).next().toggleClass('completed')
+            const listTodo = $('#listTodo');
+            listTodo
+                //勾選完成的工作
+                .on('change', 'input[type="checkbox"]', function () {
 
-                countTodo();
+                    //next()的方法會找到checkbox旁邊的label標籤
+                    //然後將completed class套用在label標籤上
+                    $(this).next().toggleClass('completed');
+                    countTodo();
+                })
+                //刪除todo
+                .on('click', 'button', function () {
+                    // $(this).parents('li').remove();
+                    $(this).parents('li').slideUp(500, function () {
+                        $(this).remove();
+                        countTodo();
+                    })
+
+                })
+            //清除已經完成的所有工作
+            $('#buttonComplete').on('click', function () {
+                listTodo.find(':checked').each(function () {
+                    // $(this).parents('li').remove();
+                    $(this).parents('li').slideUp(500, function () {
+                        $(this).remove();
+                    })
+                })
             })
 
             //計算還有多少個工作要做
