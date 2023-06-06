@@ -94,6 +94,14 @@
                     countTodo(); //重新計算待做工作的數量
                 }
             })
+
+            //勾選完成的工作
+            $('#listTodo').on('change', 'input[type="checkbox"]', function () {
+                $(this).next().toggleClass('completed')
+
+                countTodo();
+            })
+
             //計算還有多少個工作要做
             function countTodo() {
                 const total = $('input[type="checkbox"]:not(":checked")').length;
