@@ -46,6 +46,19 @@
             // $('li').slice(4, 6).css('background-color', 'silver')
             // $('li').first().css('background-color', 'silver')
             // $('li').last().css('background-color', 'silver')
+
+            //$('ul').has("li:contains('Item3')").css('background-color', 'lightgreen')
+            //$('li').not(":nth-child(2n)").css('background-color', 'silver')
+            // $('li').on('click', function () {
+            //     if ($(this).is(":contains('Item3')")) {
+            //         $(this).css('background-color', 'lightgreen')
+            //     }
+            // })
+            //$('li').filter(":nth-child(2n)").css('background-color', 'lightgreen')
+            const datas = $('li').map(function () {
+                return $(this).text();
+            });
+            console.log(datas);
         })
     </script>
 </body>
