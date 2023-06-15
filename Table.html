@@ -79,11 +79,14 @@
         //DOM Tree產生可以使用了
         $(function () {
 
-            const users = [
-                { "name": "Tom", "email": "Tom@gmail.com", "age": 30 },
-                { "name": "Mary", "email": "Mary@gmail.com", "age": 28 },
-                { "name": "Jack2", "email": "Jack@gmail.com", "age": 32 },
-                { "name": "John", "email": "John@gmail.com", "age": 25 }];
+            // const users = [
+            //     { "name": "Tom", "email": "Tom@gmail.com", "age": 30 },
+            //     { "name": "Mary", "email": "Mary@gmail.com", "age": 28 },
+            //     { "name": "Jack2", "email": "Jack@gmail.com", "age": 32 },
+            //     { "name": "John", "email": "John@gmail.com", "age": 25 }];
+
+            //資料從localStorage取出來
+            const users = JSON.parse(localStorage.getItem("users")) || [];
 
 
             //刪除陣列中的某一筆資料 splice("從陣列中的第幾個位置","刪除幾筆資料")
@@ -125,6 +128,9 @@
                     users.splice(idx - 1, 1, user);
                 }
 
+                //更新localStorage中的資料
+                localStorage.setItem("users", JSON.stringify(users));
+
                 //重新將JSON中的資料載入到網頁上
                 ShowUsers();
                 //隱藏Modal
@@ -138,6 +144,10 @@
             $('#userTable>tbody').on('click', 'button:nth-child(2)', function () {
                 const idx = $(this).parents('tr').children('td:nth-child(1)').text() - 1;
                 users.splice(idx, 1);  //只刪除資料，介面上的內容還在
+
+                //更新localStorage中的資料
+                localStorage.setItem("users", JSON.stringify(users));
+
                 //重新將JSON中的資料載入到網頁上
                 ShowUsers();
                 //$(this).parents('tr').remove(); //只刪除介面上顯示的內容，資料還在
