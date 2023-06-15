@@ -27,34 +27,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Tom</td>
-                            <td>Tom@gmail.com</td>
-                            <td>30</td>
-                            <td>
-                                <button class="btn btn-secondary">編輯</button>
-                                <button class="btn btn-danger">刪除</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Jack</td>
-                            <td>Jack@gmail.com</td>
-                            <td>28</td>
-                            <td> <button class="btn btn-secondary">編輯</button>
-                                <button class="btn btn-danger">刪除</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Mary</td>
-                            <td>Mary@gmail.com</td>
-                            <td>27</td>
-                            <td> <button class="btn btn-secondary">編輯</button>
-                                <button class="btn btn-danger">刪除</button>
-                            </td>
-                        </tr>
+
                     </tbody>
                 </table>
             </div>
@@ -70,12 +43,37 @@
         //$(document).ready(function(){ })
         //DOM Tree產生可以使用了
         $(function () {
+
+            const users = [
+                { "name": "Tom", "email": "Tom@gmail.com", "age": 30 },
+                { "name": "Mary", "email": "Mary@gmail.com", "age": 28 },
+                { "name": "Jack", "email": "Jack@gmail.com", "age": 32 }];
+
+            function ShowUsers() {
+                const docFrag = $(document.createDocumentFragment()); //建立一個空的物件
+                $.each(users, function (idx, user) {
+                    const { name, email, age } = user;
+                    const data = `
+                       <tr>
+                            <td>${idx + 1}</td>
+                            <td>${name}</td>
+                            <td>${email}</td>
+                            <td>${age}</td>
+                            <td> <button class="btn btn-secondary">編輯</button>
+                                <button class="btn btn-danger">刪除</button>
+                            </td>
+                        </tr>
+                    `
+                    docFrag.append(data);
+                })
+
+                $('#userTable>tbody').html(docFrag);
+            }
+
+            ShowUsers();
+
+
             $('#userTable>tbody button:nth-child(1)').on('click', function () {
-                alert('edit');
-                // console.log($(this));
-                // console.log($(this).parent());
-                // console.log($(this).parent().prev().text()); //年紀
-                // console.log($(this).parent().prev().prev().text()); //電子郵件
                 const row = ($(this).parents('tr'));
                 console.log(row.children('td:nth-child(1)').text()); //id
                 console.log(row.children('td:nth-child(2)').text()); //name
