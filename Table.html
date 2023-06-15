@@ -44,6 +44,7 @@
                     <div class="modal-body">
                         <form>
                             <div class="mb-3">
+                                <input type="hidden" id="id">
                                 <label for="name" class="col-form-label">姓名:</label>
                                 <input type="text" class="form-control" id="name">
                             </div>
@@ -58,8 +59,8 @@
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Send message</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
+                        <button type="button" class="btn btn-primary">修改</button>
                     </div>
                 </div>
             </div>
@@ -89,13 +90,21 @@
             //users.splice(1, 1, { "name": "Mary3", "email": "Mary3@gmail.com", "age": 33 });
 
 
+            //編輯資料
             $('#userTable>tbody').on('click', 'button:nth-child(1)', function () {
                 const row = ($(this).parents('tr'));
-                console.log(row.children('td:nth-child(1)').text()); //id
-                console.log(row.children('td:nth-child(2)').text()); //name
-                console.log(row.children('td:nth-child(3)').text()); //email
-                console.log(row.children('td:nth-child(4)').text()); //age
+                const id = row.children('td:nth-child(1)').text(); //id
+                const name = row.children('td:nth-child(2)').text(); //name
+                const email = row.children('td:nth-child(3)').text(); //email
+                const age = row.children('td:nth-child(4)').text(); //age
+                //要把修改的資料帶入到Modal中
+                $('#id').val(id);
+                $('#name').val(name);
+                $('#email').val(email);
+                $('#age').val(age);
+
             })
+            //刪除資料
             $('#userTable>tbody').on('click', 'button:nth-child(2)', function () {
                 const idx = $(this).parents('tr').children('td:nth-child(1)').text() - 1;
                 users.splice(idx, 1);  //只刪除資料，介面上的內容還在
