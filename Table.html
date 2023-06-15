@@ -40,7 +40,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">資料修改</h1>
+                        <h1 class="modal-title fs-5" id="userModalLabel">資料修改</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -129,8 +129,7 @@
                 ShowUsers();
                 //隱藏Modal
                 $('#userModal').modal('hide');
-                //清除所有input中的資料
-                $('input').val("");
+
 
             })
 
@@ -145,6 +144,7 @@
                 //console.log(users);
             })
 
+            //顯示資料
             function ShowUsers() {
                 const docFrag = $(document.createDocumentFragment()); //建立一個空的物件
                 $.each(users, function (idx, user) {
@@ -168,6 +168,26 @@
             }
 
             ShowUsers();
+
+            //Modal隱藏
+            $('#userModal').on('hide.bs.modal', function () {
+                //清除所有input中的資料
+                $('input').val("");
+            })
+
+            //Modal顯示
+            $('#userModal').on('shown.bs.modal', function () {
+                let idx = $('#id').val();
+                if (idx === "") {
+                    $('#buttonUpdate').text("新增");
+                    $('#userModalLabel').text("使用者新增");
+                } else {
+                    $('#buttonUpdate').text("修改")
+                    $('#userModalLabel').text("使用者修改");
+                }
+
+
+            })
 
 
 
