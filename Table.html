@@ -60,7 +60,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">關閉</button>
-                        <button type="button" class="btn btn-primary">修改</button>
+                        <button id="buttonUpdate" type="button" class="btn btn-primary">修改</button>
                     </div>
                 </div>
             </div>
@@ -92,18 +92,34 @@
 
             //編輯資料
             $('#userTable>tbody').on('click', 'button:nth-child(1)', function () {
+                //讀出Table中要修改的資料
                 const row = ($(this).parents('tr'));
                 const id = row.children('td:nth-child(1)').text(); //id
                 const name = row.children('td:nth-child(2)').text(); //name
                 const email = row.children('td:nth-child(3)').text(); //email
                 const age = row.children('td:nth-child(4)').text(); //age
-                //要把修改的資料帶入到Modal中
+                //把修改的資料帶入到Modal中
                 $('#id').val(id);
                 $('#name').val(name);
                 $('#email').val(email);
                 $('#age').val(age);
 
             })
+
+            //修改資料
+            $('#buttonUpdate').on('click', function () {
+                const idx = $('#id').val() - 1;
+                const user = { "name": $('#name').val(), "email": $('#email').val(), "age": $('#age').val() };
+                //修改JSON中的資料
+                users.splice(idx, 1, user);
+                //重新將JSON中的資料載入到網頁上
+                ShowUsers();
+                //隱藏Modal
+                $('#userModal').modal('hide');
+
+            })
+
+
             //刪除資料
             $('#userTable>tbody').on('click', 'button:nth-child(2)', function () {
                 const idx = $(this).parents('tr').children('td:nth-child(1)').text() - 1;
