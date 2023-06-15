@@ -49,6 +49,17 @@
                 { "name": "Mary", "email": "Mary@gmail.com", "age": 28 },
                 { "name": "Jack", "email": "Jack@gmail.com", "age": 32 }];
 
+            $('#userTable>tbody').on('click', 'button:nth-child(1)', function () {
+                const row = ($(this).parents('tr'));
+                console.log(row.children('td:nth-child(1)').text()); //id
+                console.log(row.children('td:nth-child(2)').text()); //name
+                console.log(row.children('td:nth-child(3)').text()); //email
+                console.log(row.children('td:nth-child(4)').text()); //age
+            })
+            $('#userTable>tbody').on('click', 'button:nth-child(2)', function () {
+                alert('delete');
+            })
+
             function ShowUsers() {
                 const docFrag = $(document.createDocumentFragment()); //建立一個空的物件
                 $.each(users, function (idx, user) {
@@ -73,16 +84,7 @@
             ShowUsers();
 
 
-            $('#userTable>tbody button:nth-child(1)').on('click', function () {
-                const row = ($(this).parents('tr'));
-                console.log(row.children('td:nth-child(1)').text()); //id
-                console.log(row.children('td:nth-child(2)').text()); //name
-                console.log(row.children('td:nth-child(3)').text()); //email
-                console.log(row.children('td:nth-child(4)').text()); //age
-            })
-            $('#userTable>tbody button:nth-child(2)').on('click', function () {
-                alert('delete');
-            })
+
 
 
 
