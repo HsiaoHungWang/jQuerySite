@@ -30,7 +30,7 @@
                         <tr>
                             <td>1</td>
                             <td>Tom</td>
-                            <td>Tom@gmali.com</td>
+                            <td>Tom@gmail.com</td>
                             <td>30</td>
                             <td>
                                 <button class="btn btn-secondary">編輯</button>
@@ -40,7 +40,7 @@
                         <tr>
                             <td>2</td>
                             <td>Jack</td>
-                            <td>Jack@gmali.com</td>
+                            <td>Jack@gmail.com</td>
                             <td>28</td>
                             <td> <button class="btn btn-secondary">編輯</button>
                                 <button class="btn btn-danger">刪除</button>
@@ -49,7 +49,7 @@
                         <tr>
                             <td>3</td>
                             <td>Mary</td>
-                            <td>Mary@gmali.com</td>
+                            <td>Mary@gmail.com</td>
                             <td>27</td>
                             <td> <button class="btn btn-secondary">編輯</button>
                                 <button class="btn btn-danger">刪除</button>
@@ -85,6 +85,15 @@
             $('#userTable>tbody button:nth-child(2)').on('click', function () {
                 alert('delete');
             })
+
+
+            //物件{key:value,key:value}
+            //陣列[index0:value,index1:value,index2:value]
+            //JSON [{},{},{}] {key:[{},{}]}
+            const users = [
+                { "name": "Tom", "email": "Tom@gmail.com", "age": 30 },
+                { "name": "Mary", "email": "Mary@gmail.com", "age": 28 },
+                { "name": "Jack", "email": "Jack@gmail.com", "age": 32 }];
 
         })
     </script>
