@@ -72,6 +72,15 @@
         $(function () {
             $('#userTable>tbody button:nth-child(1)').on('click', function () {
                 alert('edit');
+                // console.log($(this));
+                // console.log($(this).parent());
+                // console.log($(this).parent().prev().text()); //年紀
+                // console.log($(this).parent().prev().prev().text()); //電子郵件
+                const row = ($(this).parents('tr'));
+                console.log(row.children('td:nth-child(1)').text()); //id
+                console.log(row.children('td:nth-child(2)').text()); //name
+                console.log(row.children('td:nth-child(3)').text()); //email
+                console.log(row.children('td:nth-child(4)').text()); //age
             })
             $('#userTable>tbody button:nth-child(2)').on('click', function () {
                 alert('delete');
