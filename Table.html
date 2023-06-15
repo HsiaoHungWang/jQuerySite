@@ -16,7 +16,7 @@
             <div class="col-2"></div>
             <div class="col-8">
                 <h2>jQuery 練習</h2>
-                <table class="table table-bordered">
+                <table id="userTable" class="table table-bordered">
                     <thead>
                         <tr>
                             <th>編號</th>
@@ -67,7 +67,15 @@
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <script>
+        //$(document).ready(function(){ })
+        //DOM Tree產生可以使用了
         $(function () {
+            $('#userTable>tbody button:nth-child(1)').on('click', function () {
+                alert('edit');
+            })
+            $('#userTable>tbody button:nth-child(2)').on('click', function () {
+                alert('delete');
+            })
 
         })
     </script>
