@@ -95,6 +95,33 @@
                 { "name": "Mary", "email": "Mary@gmail.com", "age": 28 },
                 { "name": "Jack", "email": "Jack@gmail.com", "age": 32 }];
 
+            //JavaScript的讀法
+            //console.log(users[1]); //{ "name": "Mary", "email": "Mary@gmail.com", "age": 28 }
+            // console.log(users[1].name); //Mary
+            // console.log(users[1].email); //Mary@gmail.com
+
+            //解構賦值 (Destructuring assignment) 語法
+            // const { name, email, age } = users[1];
+            //console.log(name)
+
+            //jQuery的讀法
+            // $.each(users, function (idx, user) {
+            //     //console.log(idx);//0 1 2
+            //     //console.log(user);//{ "name": "Tom", "email": "Tom@gmail.com", "age": 30 }
+            //     $.each(user, function (key, value) {
+            //         //console.log(key); //name email age
+            //         console.log(value); //TOM Tom@gmal.com 30
+            //     })
+            // })
+
+
+            $.each(users, function (idx, user) {
+                const { name, email, age } = user;
+                console.log(name);
+                console.log(email);
+                console.log(age);
+            })
+
         })
     </script>
 </body>
