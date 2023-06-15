@@ -65,7 +65,9 @@
                 console.log(row.children('td:nth-child(4)').text()); //age
             })
             $('#userTable>tbody').on('click', 'button:nth-child(2)', function () {
-                alert('delete');
+                const idx = $(this).parents('tr').children('td:nth-child(1)').text() - 1;
+                users.splice(idx, 1);
+                ShowUsers();
             })
 
             function ShowUsers() {
